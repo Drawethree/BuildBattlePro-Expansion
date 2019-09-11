@@ -21,7 +21,7 @@ public class BuildBattleExpansion extends PlaceholderExpansion {
      */
     @Override
     public boolean canRegister(){
-        return Bukkit.getPluginManager().getPlugin(getPlugin()) != null;
+        return Bukkit.getPluginManager().getPlugin(getRequiredPlugin()) != null;
     }
 
     /**
@@ -43,7 +43,7 @@ public class BuildBattleExpansion extends PlaceholderExpansion {
          * "SomePlugin" does not have static methods to access its api so we must
          * create a variable to obtain access to it.
          */
-        plugin = (BuildBattle) Bukkit.getPluginManager().getPlugin(getPlugin());
+        plugin = (BuildBattle) Bukkit.getPluginManager().getPlugin(getRequiredPlugin());
 
         // if for some reason we can not get our variable, we should return false.
         if(plugin == null){
@@ -105,7 +105,7 @@ public class BuildBattleExpansion extends PlaceholderExpansion {
      */
     @Override
     public String getVersion(){
-        return "1.0.0";
+        return "1.0.2";
     }
 
     /**
